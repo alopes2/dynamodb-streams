@@ -18,7 +18,7 @@ resource "aws_iam_role_policy" "process_cars_lambda_role_policies" {
 }
 
 data "archive_file" "process_cars_lambda_file" {
-  source_dir  = "src"
+  source_dir  = "init_code"
   type        = "zip"
   output_path = "process_cars_lambda_payload.zip"
 }
