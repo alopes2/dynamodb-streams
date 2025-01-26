@@ -7,6 +7,12 @@ resource "aws_lambda_function" "process_cars_lambda" {
   source_code_hash = data.archive_file.process_cars_lambda_file.output_base64sha256
 }
 
+resource "aws_lambda_event_source_mapping" "example" {
+  event_source_arn  = aws_dynamodb_table.cars.stream_arn
+  function_name     = aws_lambda_function.process_cars_lambda.arn
+  starting_position = "LATEST"
+}
+
 resource "aws_iam_role" "process_cars_lambda_role" {
   name               = "process-cars-lambda-role"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
