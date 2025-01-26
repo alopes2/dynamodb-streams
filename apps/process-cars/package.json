@@ -1,0 +1,20 @@
+{
+  "name": "process-cars",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc",
+    "build": "tsc && copyfiles package.json build/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.147",
+    "copyfiles": "^2.4.1",
+    "typescript": "^5.7.3"
+  }
+}
